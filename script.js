@@ -32,15 +32,15 @@ function winningConditionFulfilled(){
         if ((squarewinOne.textContent==squarewinTwo.textContent)&&(squarewinTwo.textContent==squarewinThree.textContent)){
             if(squarewinOne.textContent=="X"){
                 console.log("Works")
-                winMessage.innerHTML="X Wins"
+                winMessage.innerHTML=(player1Name +" Wins")
             }
             else if(squarewinOne.textContent=="O"){
                 console.log("O Wins")
-                winMessage.innerHTML="O Wins"
+                winMessage.innerHTML=(player2Name + " Wins")
             }
         }
    }
-   if (!(winMessage.innerHTML =="X Wins" || winMessage.innerHTML=="O Wins")){
+   if (!(winMessage.innerHTML ==(player1Name +" Wins") || winMessage.innerHTML==(player2Name + " Wins"))){
     let boardIsFull=true
     for (let index=0;index<tableElement.length;index++){
         let square=document.getElementById(index.toString())
@@ -59,3 +59,6 @@ function resetBoard(){
     }
 }
 buttonElement.addEventListener("click", resetBoard)
+
+let player1Name = window.prompt("Player 1 Name");
+let player2Name = window.prompt("Player 2 Name");
